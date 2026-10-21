@@ -66,7 +66,6 @@ main { max-width: 760px; margin: 0 auto; padding: 10px 20px 60px; }
 .card:hover, .card:focus-visible, .card:active, .card.glow { transform: translateX(6px); box-shadow: 0 12px 28px rgba(var(--shadow-rgb), .24), var(--glow); }
 .tag { display: block; font-size: 13px; font-weight: 700; color: var(--rose); }
 .name { display: block; font-size: 22px; font-weight: 700; line-height: 1.25; margin: 2px 0 4px; }
-.desc { display: block; font-size: 14.5px; }
 .open { display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 700; color: var(--rose); }
 .highlight .card { background: linear-gradient(135deg, var(--hl-a), var(--hl-b)); }
 .highlight .card::after { content: "My highlight ✨"; position: absolute; top: -12px; right: 18px; background: var(--rose); color: var(--on-rose); font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 999px; }
