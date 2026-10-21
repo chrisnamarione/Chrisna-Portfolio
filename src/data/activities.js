@@ -78,12 +78,13 @@ export const activities = [
     learn:
       "I need to improve in making learning objectives and in my energy and confidence when teaching.",
     photos: [
-      "https://uploads.onecompiler.io/4555jfgqr/1791083865957/activity8.jpg",
-      "https://uploads.onecompiler.io/4555jfgqr/4555m3zye/814574580_1094085529680015_6470808182799434036_n.jpg",
-      "https://uploads.onecompiler.io/4555jfgqr/1791113368015/05a0221f-aab8-4291-bdd0-63245807f0c9.jpg",
-      "https://uploads.onecompiler.io/4555jfgqr/1791113775964/demo3.jpg",
-      "https://uploads.onecompiler.io/4555jfgqr/1791113781916/demo4.jpg",
-      "https://uploads.onecompiler.io/4555jfgqr/1791113787519/demo5.jpg",
+      "activity8.6.jpg",
+      "activity8.7.jpg",
+      "activity8.3.jpg",
+      "activity8.4.jpg",
+      "activity8.5.jpg",
+      "activity8.1.jpg",
+      "activity8.2.jpg"
     ],
   },
 ];

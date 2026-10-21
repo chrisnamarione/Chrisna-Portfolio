@@ -1,14 +1,18 @@
+// One blossom on the branch. Only the "View my work" link is clickable
+// (it's a real link, #activity3, so it works with keyboard and the Back button).
 export default function ActivityCard({ activity }) {
   const { id, label, title, highlight } = activity;
 
   return (
     <li className={highlight ? "highlight" : undefined}>
       <span className="node" aria-hidden="true">🌸</span>
-      <a className="card" href={`#${id}`}>
+      <div className="card">
         <span className="tag">{label}</span>
         <span className="name">{title}</span>
-        <span className="open">View my work</span>
-      </a>
+        <a className="open" href={`#${id}`} aria-label={`View my work: ${title}`}>
+          View my work
+        </a>
+      </div>
     </li>
   );
 }

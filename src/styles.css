@@ -8,6 +8,8 @@
   --title-shadow: 0 3px 0 #fff;
   --shadow-rgb: 194, 69, 111;
   --glow: 0 0 0 0 transparent;   /* no glow in light mode */
+  --link-hi: #8f2549;            /* "View my work" color when pointed at */
+  --text-glow: 0 0 0 transparent;
 }
 /* Dark theme: a soft dusky plum, not black */
 [data-theme="dark"] {
@@ -19,6 +21,8 @@
   --title-shadow: 0 0 18px rgba(255, 160, 205, .5);
   --shadow-rgb: 0, 0, 0;
   --glow: 0 0 0 2px #ffb3cf, 0 0 22px 2px rgba(255, 150, 200, .7), 0 0 50px rgba(255, 150, 200, .4);
+  --link-hi: #fff;
+  --text-glow: 0 0 10px rgba(255, 150, 200, .95), 0 0 22px rgba(255, 150, 200, .6);
 }
 * { box-sizing: border-box; }
 body {
@@ -63,10 +67,12 @@ main { max-width: 760px; margin: 0 auto; padding: 10px 20px 60px; }
 .node { position: absolute; left: -72px; top: 50%; translate: 0 -50%; width: 56px; height: 56px; border-radius: 50%; background: var(--surface); border: 3px solid var(--petal); display: grid; place-items: center; font-size: 26px; box-shadow: 0 4px 12px rgba(var(--shadow-rgb), .2); }
 
 .card { display: block; color: inherit; text-decoration: none; background: var(--paper); border: 2px solid var(--edge); border-radius: 28px 28px 28px 6px; padding: 18px 22px; box-shadow: 0 8px 22px rgba(var(--shadow-rgb), .14); transition: transform .25s, box-shadow .25s; position: relative; }
-.card:hover, .card:focus-visible, .card:active, .card.glow { transform: translateX(6px); box-shadow: 0 12px 28px rgba(var(--shadow-rgb), .24), var(--glow); }
+.card:hover, .card:focus-within, .card.glow { transform: translateX(6px); box-shadow: 0 12px 28px rgba(var(--shadow-rgb), .24), var(--glow); }
 .tag { display: block; font-size: 13px; font-weight: 700; color: var(--rose); }
 .name { display: block; font-size: 22px; font-weight: 700; line-height: 1.25; margin: 2px 0 4px; }
-.open { display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 700; color: var(--rose); }
+/* Only this text is clickable; the text itself highlights when pointed at or tapped */
+.open { display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 700; color: var(--rose); text-decoration: underline; text-decoration-color: transparent; text-decoration-thickness: 2px; text-underline-offset: 4px; transition: color .2s, text-shadow .2s, text-decoration-color .2s; }
+.open:hover, .open:focus-visible, .open:active, .open.glow { color: var(--link-hi); text-decoration-color: currentColor; text-shadow: var(--text-glow); }
 .highlight .card { background: linear-gradient(135deg, var(--hl-a), var(--hl-b)); }
 .highlight .card::after { content: "My highlight ✨"; position: absolute; top: -12px; right: 18px; background: var(--rose); color: var(--on-rose); font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 999px; }
 .highlight .node { background: var(--rose); border-color: var(--surface); }
@@ -79,13 +85,18 @@ main { max-width: 760px; margin: 0 auto; padding: 10px 20px 60px; }
 .note { background: var(--surface); border: 2px solid var(--soft); border-radius: 18px; padding: 14px 18px; }
 .note h3 { margin: 0 0 2px; font-size: 14px; color: var(--rose); }
 .note p { margin: 0; font-size: 15px; }
-.photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
-.photo { margin: 0; background: var(--surface); border: 2px solid var(--soft); border-radius: 20px; padding: 8px; overflow: hidden; }
+/* two photos per row; a lone last photo is centered */
+.photos { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.photo { flex: 0 1 calc(50% - 7px); min-width: 0; margin: 0; background: var(--surface); border: 2px solid var(--soft); border-radius: 20px; padding: 8px; overflow: hidden; }
+.photo:only-child { flex-basis: 100%; }
 .photo img { display: block; width: 100%; max-height: 600px; object-fit: contain; border-radius: 14px; }
 .photo-missing { padding: 40px 12px; text-align: center; font-size: 13px; color: var(--rose); overflow-wrap: anywhere; }
 .back { display: inline-block; margin-top: 22px; background: var(--ink); color: var(--on-ink); text-decoration: none; font-weight: 700; padding: 12px 26px; border-radius: 999px; transition: box-shadow .25s, background .25s; }
 .back:hover, .back:focus-visible, .back:active, .back.glow { background: var(--rose); color: var(--on-rose); box-shadow: var(--glow); }
 
+@media (max-width: 600px) {
+  .photo { flex-basis: 100%; }
+}
 @media (max-width: 520px) {
   .path { padding-left: 62px; }
   .path::before { left: 22px; }
@@ -108,6 +119,6 @@ main { max-width: 760px; margin: 0 auto; padding: 10px 20px 60px; }
 }
 @media (prefers-reduced-motion: reduce) {
   #petals { display: none; }
-  .card, .back, .theme-btn { transition: none; }
-  .card:hover, .card:focus-visible, .card:active, .card.glow { transform: none; }
+  .card, .open, .back, .theme-btn { transition: none; }
+  .card:hover, .card:focus-within, .card.glow { transform: none; }
 }

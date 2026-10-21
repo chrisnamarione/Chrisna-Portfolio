@@ -19,7 +19,7 @@ export default function Home({ theme, onToggleTheme }) {
           <span className="ico" aria-hidden="true">{isDark ? "☀️" : "🌙"}</span>
         </button>
       </div>
-      <p className="hint">Follow the branch and tap a blossom to see my work.</p>
+      <p className="hint">Follow the branch and tap “View my work” to open an activity.</p>
 
       <ol className="path">
         {activities.map((a) => (

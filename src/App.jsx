@@ -47,22 +47,27 @@ export default function App() {
 
   // Dark mode: on a tap (no hover on phones) let the card / Back button glow
   // for a moment before the page changes, so the glow is actually seen.
+    // Dark mode: on a tap (no hover on phones) let the card / Back button glow
+  // for a moment before the page changes, so the glow is actually seen.
   useEffect(() => {
     const onClick = (e) => {
-      const el = e.target.closest("a.card, a.back");
+      const el = e.target.closest("a.open, a.back");
       if (!el || document.documentElement.dataset.theme !== "dark") return;
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
-      el.classList.add("glow"); // show the glow, then open the page
+      const card = el.closest(".card");
+      el.classList.add("glow");
+      card?.classList.add("glow"); // show the glow, then open the page
       setTimeout(() => {
         el.classList.remove("glow");
+        card?.classList.remove("glow");
         window.location.hash = el.getAttribute("href").slice(1);
       }, 450);
     };
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
   }, []);
-
+  
   const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
   const activity = activities.find((a) => a.id === activeId);
 
