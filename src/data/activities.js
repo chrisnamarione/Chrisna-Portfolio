@@ -4,6 +4,7 @@
 
 const BASE = import.meta.env.BASE_URL;
 export const imageUrl = (file) => (file.startsWith("http") ? file : `${BASE}images/${file}`);
+export const videoUrl = (file) => (file.startsWith("http") ? file : `${BASE}videos/${file}`);
 
 export const profile = {
   course: "BSEd Science 3B",
@@ -83,5 +84,12 @@ export const activities = [
       "activity8.1.jpg",
       "activity8.2.jpg",
     ],
+  },
+  {
+    id: "activity9",
+    title: "Video Animations",
+    full: "Activity 9 – Video Animations",
+    desc: "We made an animation video entitled “The Land of Forgotten Words” In this story I learned that a real friends will understand and forgive us if we are honest and sincere in saying sorry.",
+    video: { src: "activity9.mp4" },
   },
 ];

@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
 import Photo from "./Photo.jsx";
+import Video from "./Video.jsx";
 
 export default function ActivityPage({ activity }) {
   const headingRef = useRef(null);
-  const { full, title, desc, learn, photos = [] } = activity;
+  const { full, title, desc, learn, video, photos = [] } = activity;
 
   // Move keyboard / screen-reader focus to the new page's heading
   useEffect(() => {
@@ -30,11 +31,15 @@ export default function ActivityPage({ activity }) {
         </div>
       )}
 
-      <div className="photos">
-        {photos.map((file, i) => (
-          <Photo key={file} file={file} alt={`${title}, photo ${i + 1}`} />
-        ))}
-      </div>
+      {video && <Video video={video} title={title} />}
+
+      {photos.length > 0 && (
+        <div className="photos">
+          {photos.map((file, i) => (
+            <Photo key={file} file={file} alt={`${title}, photo ${i + 1}`} />
+          ))}
+        </div>
+      )}
 
       <a className="back" href="#">Back to home</a>
     </article>
