@@ -70,13 +70,10 @@ export const activities = [
   },
   {
     id: "activity8",
-    label: "Final • Activity 08",
     title: "Demo Teaching",
     full: "Activity 8 – Demo Teaching",
     highlight: true,
     desc: "I conducted an individual microteaching demo as part of our final requirement in TTL1.",
-    learn:
-      "I need to improve in making learning objectives and in my energy and confidence when teaching.",
     photos: [
       "activity8.6.jpg",
       "activity8.7.jpg",
@@ -84,7 +81,7 @@ export const activities = [
       "activity8.4.jpg",
       "activity8.5.jpg",
       "activity8.1.jpg",
-      "activity8.2.jpg"
+      "activity8.2.jpg",
     ],
   },
 ];
