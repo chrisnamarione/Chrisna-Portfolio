@@ -41,7 +41,7 @@ export default function ActivityPage({ activity }) {
         </div>
       )}
 
-      <a className="back" href="#">Back to home</a>
+      <a className="back" href="#">Back</a>
     </article>
   );
 }
