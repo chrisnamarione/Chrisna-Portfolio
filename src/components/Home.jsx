@@ -1,23 +1,12 @@
 import ActivityCard from "./ActivityCard.jsx";
 import { activities, profile } from "../data/activities.js";
 
-export default function Home({ theme, onToggleTheme }) {
-  const isDark = theme === "dark";
-
+export default function Home() {
   return (
     <section aria-labelledby="home-title">
       <div className="home-head">
         <h2 id="home-title" className="script">My Activities</h2>
-        <button
-          type="button"
-          className="theme-btn"
-          aria-pressed={isDark}
-          title="Tap to switch dark mode"
-          onClick={onToggleTheme}
-        >
-          <span>{profile.course}</span>
-          <span className="ico" aria-hidden="true">{isDark ? "☀️" : "🌙"}</span>
-        </button>
+        <span className="course-tag">{profile.course}</span>
       </div>
       <p className="hint">Follow the branch and tap “View my work” to open an activity.</p>
 

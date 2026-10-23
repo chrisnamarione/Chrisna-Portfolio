@@ -68,7 +68,6 @@ export default function App() {
     return () => document.removeEventListener("click", onClick);
   }, []);
   
-  const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
   const activity = activities.find((a) => a.id === activeId);
 
   return (
@@ -79,7 +78,7 @@ export default function App() {
         {activity ? (
           <ActivityPage key={activity.id} activity={activity} />
         ) : (
-          <Home theme={theme} onToggleTheme={toggleTheme} />
+          <Home />
         )}
       </main>
     </>
