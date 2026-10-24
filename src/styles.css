@@ -42,7 +42,7 @@ main { max-width: 760px; margin: 0 auto; padding: 10px 20px 60px; }
 /* "My Activities" row with the BSEd Science tag */
 .home-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 14px; }
 .hint { margin: 0 0 28px; }
-.course-tag { font: inherit; font-size: 14px; font-weight: 700; color: var(--deep); display: inline-flex; align-items: center; gap: 8px; background: var(--paper); border: 2px solid var(--edge); border-radius: 999px; padding: 8px 16px; box-shadow: 0 4px 14px rgba(var(--shadow-rgb), .15); }
+.course-tag { font-size: 14px; font-weight: 700; background: var(--paper); border: 2px solid var(--edge); border-radius: 999px; padding: 8px 16px; box-shadow: 0 4px 14px rgba(var(--shadow-rgb), .15); white-space: nowrap; }
 
 /* One vertical branch with every activity on it */
 .path { list-style: none; margin: 0; padding: 0 0 0 76px; position: relative; }
@@ -62,9 +62,28 @@ main { max-width: 760px; margin: 0 auto; padding: 10px 20px 60px; }
 .page h2 { font-size: 30px; line-height: 1.25; margin: 0 0 18px; }
 .page h2:focus { outline: none; }
 .notes { display: grid; gap: 12px; margin-bottom: 20px; }
-.note { background: var(--surface); border: 2px solid var(--soft); border-radius: 18px; padding: 14px 18px; }
+.note { text-align: center; }
 .note h3 { margin: 0 0 2px; font-size: 14px; color: var(--rose); }
-.note p { margin: 0; font-size: 15px; }
+.note p { margin: 0; font-size: 16px; line-height: 1.7; }
+/* Cherry blossom garland that wraps around the description and the photos */
+.bloom {
+  --t: 30px; --c: 58px; --o: calc((var(--c) - var(--t)) / 2);
+  --tileH: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 40%22%3E%3Cg fill=%22%23f7a8c4%22 stroke=%22%23e9799f%22 stroke-width=%221%22%3E%3Ccircle cx=%2220.0%22 cy=%2210.0%22 r=%227%22/%3E%3Ccircle cx=%2229.5%22 cy=%2216.9%22 r=%227%22/%3E%3Ccircle cx=%2225.9%22 cy=%2228.1%22 r=%227%22/%3E%3Ccircle cx=%2214.1%22 cy=%2228.1%22 r=%227%22/%3E%3Ccircle cx=%2210.5%22 cy=%2216.9%22 r=%227%22/%3E%3C/g%3E%3Ccircle cx=%2220%22 cy=%2220%22 r=%224%22 fill=%22%23c2456f%22/%3E%3Cg fill=%22%23fcd3e1%22 stroke=%22%23f0a3bf%22 stroke-width=%220.8%22%3E%3Ccircle cx=%2260.0%22 cy=%2214.0%22 r=%224.2%22/%3E%3Ccircle cx=%2265.7%22 cy=%2218.1%22 r=%224.2%22/%3E%3Ccircle cx=%2263.5%22 cy=%2224.9%22 r=%224.2%22/%3E%3Ccircle cx=%2256.5%22 cy=%2224.9%22 r=%224.2%22/%3E%3Ccircle cx=%2254.3%22 cy=%2218.1%22 r=%224.2%22/%3E%3C/g%3E%3Ccircle cx=%2260%22 cy=%2220%22 r=%222.4%22 fill=%22%23e9799f%22/%3E%3C/svg%3E");
+  --tileV: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 80%22%3E%3Cg fill=%22%23f7a8c4%22 stroke=%22%23e9799f%22 stroke-width=%221%22%3E%3Ccircle cx=%2220.0%22 cy=%2210.0%22 r=%227%22/%3E%3Ccircle cx=%2229.5%22 cy=%2216.9%22 r=%227%22/%3E%3Ccircle cx=%2225.9%22 cy=%2228.1%22 r=%227%22/%3E%3Ccircle cx=%2214.1%22 cy=%2228.1%22 r=%227%22/%3E%3Ccircle cx=%2210.5%22 cy=%2216.9%22 r=%227%22/%3E%3C/g%3E%3Ccircle cx=%2220%22 cy=%2220%22 r=%224%22 fill=%22%23c2456f%22/%3E%3Cg fill=%22%23fcd3e1%22 stroke=%22%23f0a3bf%22 stroke-width=%220.8%22%3E%3Ccircle cx=%2220.0%22 cy=%2254.0%22 r=%224.2%22/%3E%3Ccircle cx=%2225.7%22 cy=%2258.1%22 r=%224.2%22/%3E%3Ccircle cx=%2223.5%22 cy=%2264.9%22 r=%224.2%22/%3E%3Ccircle cx=%2216.5%22 cy=%2264.9%22 r=%224.2%22/%3E%3Ccircle cx=%2214.3%22 cy=%2258.1%22 r=%224.2%22/%3E%3C/g%3E%3Ccircle cx=%2220%22 cy=%2260%22 r=%222.4%22 fill=%22%23e9799f%22/%3E%3C/svg%3E");
+  --corner: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 58 58%22%3E%3Cg fill=%22%23f49ab9%22 stroke=%22%23e06b97%22 stroke-width=%221%22%3E%3Ccircle cx=%2229.0%22 cy=%2216.0%22 r=%229.5%22/%3E%3Ccircle cx=%2241.4%22 cy=%2225.0%22 r=%229.5%22/%3E%3Ccircle cx=%2236.6%22 cy=%2239.5%22 r=%229.5%22/%3E%3Ccircle cx=%2221.4%22 cy=%2239.5%22 r=%229.5%22/%3E%3Ccircle cx=%2216.6%22 cy=%2225.0%22 r=%229.5%22/%3E%3C/g%3E%3Ccircle cx=%2229%22 cy=%2229%22 r=%226%22 fill=%22%23fff3f7%22/%3E%3Ccircle cx=%2229%22 cy=%2229%22 r=%222.6%22 fill=%22%23c2456f%22/%3E%3Ccircle cx=%2231.4%22 cy=%2225.8%22 r=%220.9%22 fill=%22%23e9799f%22/%3E%3Ccircle cx=%2232.8%22 cy=%2230.2%22 r=%220.9%22 fill=%22%23e9799f%22/%3E%3Ccircle cx=%2229.0%22 cy=%2233.0%22 r=%220.9%22 fill=%22%23e9799f%22/%3E%3Ccircle cx=%2225.2%22 cy=%2230.2%22 r=%220.9%22 fill=%22%23e9799f%22/%3E%3Ccircle cx=%2226.6%22 cy=%2225.8%22 r=%220.9%22 fill=%22%23e9799f%22/%3E%3C/svg%3E");
+  margin: 0 0 18px; padding: 58px 50px;
+  background:
+    var(--corner) left top / var(--c) var(--c) no-repeat,
+    var(--corner) right top / var(--c) var(--c) no-repeat,
+    var(--corner) left bottom / var(--c) var(--c) no-repeat,
+    var(--corner) right bottom / var(--c) var(--c) no-repeat,
+    var(--tileH) center var(--o) / calc(var(--t) * 2) var(--t) round no-repeat,
+    var(--tileH) center calc(100% - var(--o)) / calc(var(--t) * 2) var(--t) round no-repeat,
+    var(--tileV) var(--o) center / var(--t) calc(var(--t) * 2) no-repeat round,
+    var(--tileV) calc(100% - var(--o)) center / var(--t) calc(var(--t) * 2) no-repeat round;
+}
+.bloom > :last-child { margin-bottom: 0; }
+.photos + .video { margin-top: 18px; }
 .video { margin: 0 0 14px; background: var(--surface); border: 2px solid var(--soft); border-radius: 20px; padding: 8px; overflow: hidden; }
 .video video, .video iframe { display: block; width: 100%; border: 0; border-radius: 14px; background: #000; }
 .video video { max-height: 75vh; }
@@ -74,6 +93,11 @@ main { max-width: 760px; margin: 0 auto; padding: 10px 20px 60px; }
 .photo { flex: 0 1 calc(50% - 7px); min-width: 0; margin: 0; background: var(--surface); border: 2px solid var(--soft); border-radius: 20px; padding: 8px; overflow: hidden; }
 .photo:only-child { flex-basis: 100%; }
 .photo img { display: block; width: 100%; max-height: 600px; object-fit: contain; border-radius: 14px; }
+.photo-link { position: relative; display: block; border-radius: 14px; overflow: hidden; text-decoration: none; }
+.photo-link img { transition: transform .3s; }
+.photo-link:hover img, .photo-link:focus-visible img { transform: scale(1.03); }
+.photo-link .play { position: absolute; top: 50%; left: 50%; width: 64px; height: 64px; translate: -50% -50%; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .3)); }
+.photo-link .watch { position: absolute; left: 50%; bottom: 12px; translate: -50% 0; white-space: nowrap; background: var(--rose); color: #fff; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 999px; }
 .photo-missing { padding: 40px 12px; text-align: center; font-size: 13px; color: var(--rose); overflow-wrap: anywhere; }
 .back { display: inline-block; margin-top: 22px; background: var(--ink); color: var(--on-ink); text-decoration: none; font-weight: 700; padding: 12px 26px; border-radius: 999px; transition: box-shadow .25s, background .25s; }
 .back:hover, .back:focus-visible, .back:active { background: var(--rose); color: var(--on-rose); }
@@ -88,6 +112,7 @@ main { max-width: 760px; margin: 0 auto; padding: 10px 20px 60px; }
   .name { font-size: 19px; }
   .page { padding: 18px; }
   .page h2 { font-size: 26px; }
+  .bloom { --t: 20px; --c: 40px; padding: 38px 32px; }
   main { padding-left: 16px; padding-right: 16px; }
   /* keep the BSEd Science button on the same line as "My Activities" */
   .hero { padding-top: 96px; }
@@ -102,6 +127,6 @@ main { max-width: 760px; margin: 0 auto; padding: 10px 20px 60px; }
 }
 @media (prefers-reduced-motion: reduce) {
   #petals { display: none; }
-  .card, .open, .back { transition: none; }
+  .card, .open, .back, .photo-link img { transition: none; }
   .card:hover, .card:focus-within { transform: none; }
 }
