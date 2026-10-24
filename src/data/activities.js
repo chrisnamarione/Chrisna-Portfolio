@@ -25,7 +25,7 @@ export const activities = [
     label: "Activity 02",
     title: "Digital Skills vs Digital Literacy",
     full: "Activity 2 – Digital Skills vs. Digital Literacy",
-    desc: "This activity helped me understand the skills we need to develop in the 21st century.",
+    desc: "This activity helped me understand the skills we need to develop in the 21st century and the importance of using technology wisely, safely, and responsibly.",
     photos: ["activity2.jpg"],
   },
   {
@@ -33,7 +33,7 @@ export const activities = [
     label: "Activity 03",
     title: "ICT Survey",
     full: "Activity 3 – ICT Survey",
-    desc: "Through the ICT survey, I explored how technology is used in teaching and learning.",
+    desc: "Through this ICT survey, I explored how technology is used in teaching and learning and how it influences their learning experience. By gathering responses and presenting the results through a pie chart, I practiced organizing data and interpreting information. This activity showed me how technology and data can help us understand the world around us.",
     photos: ["activity3.jpg", "activity3.1.jpg", "activity3.2.jpg", "activity3.3.jpg"],
   },
   {
@@ -41,7 +41,7 @@ export const activities = [
     label: "Activity 04",
     title: "Word Cloud",
     full: "Activity 4 – Word Cloud",
-    desc: "I made a word cloud about online learning and technology.",
+    desc: "This activity helped me organize words into an eye-catching design. It allowed me to express my ideas creatively while improving my digital design skills and learning how to present information visually.",
     photos: ["activity4.jpg"],
   },
   {
@@ -49,7 +49,7 @@ export const activities = [
     label: "Activity 05",
     title: "E-Safety Rules",
     full: "Activity 5 – E-Safety Rules",
-    desc: "We asked about the e-safety rules followed in schools.",
+    desc: "This activity teaches the importance of staying safe online. I learned to protect my personal information, respect others, and think carefully before sharing anything on the internet.",
     photos: ["activity5.png", "activity5.1.png", "activity5.2.png"],
   },
   {
@@ -73,7 +73,7 @@ export const activities = [
     title: "Demo Teaching",
     full: "Activity 8 – Demo Teaching",
     highlight: true,
-    desc: "I conducted an individual microteaching demo as part of our final requirement in TTL1.",
+    desc: "In this activity, we had our individual demo teaching. Although I felt nervous, I learned the importance of preparation, patience, and engaging activities. This experience inspired me to keep learning and improving as a future educator.",
     photos: [
       "activity8.6.jpg",
       "activity8.7.jpg",
